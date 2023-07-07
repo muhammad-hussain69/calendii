@@ -1,0 +1,21 @@
+<div class="card events">
+  <div class="card-header" style="display: flex; flex-direction: row">
+    <h1>Calendar Events</h1>
+    <input type="date" id="filter-date" />
+    <button>Filter</button>
+  </div>
+  <div class="card-body flex-container">
+    <% @events.items.each do |event| %>
+      <div class="event-card" style>
+        <div class="event-header">
+          <h2><%= event.summary %></h2>
+        </div>
+        <div class="event-details">
+          <p><strong>Creator:</strong><%= event.creator.display_name %></p>
+          <p><strong>Start:</strong> <%= event.start.date_time %></p>
+          <p><strong>End:</strong> <%= event.end.date_time %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
