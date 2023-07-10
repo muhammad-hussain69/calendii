@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Calendii</title>
+    <link rel="icon" href="<%= asset_path('favicon1.png') %>" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,10 +12,11 @@
   </head>
 
   <body>
-  <%= render 'pages/header' %>
+  <%= render 'layouts/header' %>
   <br/>
   <div class="container" style="align-items: center">
     <%= yield %>
   </div>
+  <%= javascript_include_tag 'events' %>
   </body>
 </html>

@@ -1,0 +1,38 @@
+<div class="card events">
+  <div class="card-header" style="display: flex; flex-direction: row;background-color: lightskyblue">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li>
+        <h3>Calendar Events</h3>
+      </li>
+    </ul>
+    <form class="d-flex">
+      <button id="refresh-button" class="btn btn-primary">Refresh</button>
+      <br/>
+      <input class="form-control me-2" type="date" id="filter-date" />
+      <button class="btn btn-outline-success" id="filter-button">Filter</button>
+    </form>
+  </div>
+  <div class="card-body flex-container" style="align-items: center">
+
+    <% @events.items.each do |event| %>
+      <div class="event-card">
+        <div class="event-header">
+          <%= link_to  event.summary , events_show_path(event) ,class:'nav-link' %>
+        </div>
+        <div class="event-details">
+          <% if event.organizer.display_name %>
+            <p><strong>Organizer:</strong><%= event.organizer.display_name %></p>
+          <% end %>
+          <% if event.attendees %>
+            <p><strong>Attendees:</strong></p>
+            <% event.attendees.each do |attendee| %>
+              <p><%= attendee.email %></p>
+            <% end %>
+          <% end %>
+          <p><strong>Start:</strong> <%= event.start.date_time.strftime("%Y-%m-%d") %></p>
+          <p><strong>End:</strong> <%= event.end.date_time.strftime("%Y-%m-%d") %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

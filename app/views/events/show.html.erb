@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-7">
+      <h3>Event Details</h3>
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>
+            <strong>Title:</strong>
+            <%= @event.summary %>
+          </p>
+          <hr>
+          <p>
+            <strong>Start date:</strong>
+            <%= @event.start.date_time.strftime("%Y-%m-%d") %>
+          </p>
+          <hr>
+          <p>
+            <strong>End date:</strong>
+            <%= @event.end.date_time.strftime("%Y-%m-%d") %>
+          </p>
+          <p>
+            <strong>Description:</strong>
+            <%= @event.description %>
+          </p>
+          <hr>
+          <%= link_to 'Back', events_view_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <h3>Event Participents</h3>
+      <ul class="list-group">
+        <% @event.attendees.each do |guest| %>
+          <li class="list-group-item">
+            <div>
+                <h4 class="mt-0"><%= guest.email %></h4>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+

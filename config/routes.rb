@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+
+  root 'events#home'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-  get 'pages/index'
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
+  get 'events/view'
+
+  get 'events/show'
 
 end
