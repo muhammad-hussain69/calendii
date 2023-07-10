@@ -6,11 +6,6 @@ class EventsController < ApplicationController
   def home
   end
 
-  def show
-    render 'events/show'
-  end
-
-
   def view
     credentials =
       Google::Auth::UserRefreshCredentials.new(

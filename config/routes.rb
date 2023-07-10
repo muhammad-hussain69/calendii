@@ -14,6 +14,4 @@ Rails.application.routes.draw do
 
   get 'events/view'
 
-  get 'events/show'
-
 end

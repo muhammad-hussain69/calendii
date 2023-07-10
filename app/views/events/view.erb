@@ -17,7 +17,7 @@
     <% @events.items.each do |event| %>
       <div class="event-card">
         <div class="event-header">
-          <%= link_to  event.summary , events_show_path(event) ,class:'nav-link' %>
+          <h4> <%= event.summary %></h4>
         </div>
         <div class="event-details">
           <% if event.organizer.display_name %>
