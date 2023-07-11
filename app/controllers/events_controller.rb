@@ -20,12 +20,17 @@ class EventsController < ApplicationController
     client = Google::Apis::CalendarV3::CalendarService.new
     client.authorization = credentials
 
-    if client.authorization.access_token.present?
-      @events = client.list_events('primary')
-      render 'events/view'
+    if client.authorization.access_token
+      if client.authorization.expired?
+        sign_out_all_scopes
+        redirect_to new_user_session_path, alert: "Your session expired. You need to Sign In with Google."
+      else
+        @events = client.list_events('primary')
+        render 'events/view'
+      end
     else
       sign_out_all_scopes
-      redirect_to new_user_session_path, alert: "You can only Sign In with Google"
+      redirect_to new_user_session_path, alert: "You need to Sign In with Google to view Events."
     end
 
   end

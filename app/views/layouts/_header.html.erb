@@ -31,6 +31,11 @@
           </li>
         <% end %>
       </ul>
+      <% if user_signed_in? %>
+      <form class="d-flex">
+        <p>Welcome, <%= current_user.email %></p>
+      </form>
+      <% end %>
     </div>
   </div>
 </nav>
