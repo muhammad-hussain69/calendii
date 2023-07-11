@@ -20,6 +20,8 @@
           <h4> <%= event.summary %></h4>
         </div>
         <div class="event-details">
+          <p><strong>Start:</strong> <%= event.start.date_time.strftime("%Y-%m-%d") %></p>
+          <p><strong>End:</strong> <%= event.end.date_time.strftime("%Y-%m-%d") %></p>
           <% if event.organizer.display_name %>
             <p><strong>Organizer:</strong><%= event.organizer.display_name %></p>
           <% end %>
@@ -29,8 +31,6 @@
               <p><%= attendee.email %></p>
             <% end %>
           <% end %>
-          <p><strong>Start:</strong> <%= event.start.date_time.strftime("%Y-%m-%d") %></p>
-          <p><strong>End:</strong> <%= event.end.date_time.strftime("%Y-%m-%d") %></p>
         </div>
       </div>
     <% end %>
