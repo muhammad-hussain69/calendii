@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+let refreshButton = document.getElementById("refresh-button");
+
+refreshButton.addEventListener("click", function() {
+    filterEvents();
+});
+
 function filterEvents() {
     let filterDate = document.getElementById("filter-date").value;
     let eventCards = document.getElementsByClassName("event-card");
@@ -29,9 +35,3 @@ function filterEvents() {
         }
     }
 }
-
-let refreshButton = document.getElementById("refresh-button");
-
-refreshButton.addEventListener("click", function() {
-    location.reload();
-});
