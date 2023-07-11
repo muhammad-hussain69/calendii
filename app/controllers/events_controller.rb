@@ -20,15 +20,13 @@ class EventsController < ApplicationController
     client = Google::Apis::CalendarV3::CalendarService.new
     client.authorization = credentials
 
-    if client.authorization.access_token
+    if client.authorization.access_token.present?
       @events = client.list_events('primary')
       render 'events/view'
     else
-      flash[:failure] = "You can only Sign In with Google"
       sign_out_all_scopes
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, alert: "You can only Sign In with Google"
     end
 
   end
-
 end
