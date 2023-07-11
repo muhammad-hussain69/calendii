@@ -11,6 +11,10 @@ module Auth
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+
+    config.client_id = ENV['CLIENT_ID']
+    config.client_secret = ENV['CLIENT_SECRET']
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

@@ -25,7 +25,7 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.omniauth :google_oauth2, '139530092861-a4u6qbl11cldjf81uaqpjkbf337tt0ic.apps.googleusercontent.com', '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', scope: 'https://www.googleapis.com/auth/calendar.events.readonly, https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile'
+  config.omniauth :google_oauth2, Rails.application.config.client_id, Rails.application.config.client_secret, scope: 'https://www.googleapis.com/auth/calendar.events.readonly, https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile'
   # , scope: "https://www.googleapis.com/auth/calendar.events.readonly"
   # .readonly https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events.readonly https://www.googleapis.com/auth/calendar.events"
   # Configure the class responsible to send e-mails.

@@ -9,8 +9,8 @@ class EventsController < ApplicationController
   def view
     credentials =
       Google::Auth::UserRefreshCredentials.new(
-        client_id: "139530092861-a4u6qbl11cldjf81uaqpjkbf337tt0ic.apps.googleusercontent.com",
-        client_secret: "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",
+        client_id: Rails.application.config.client_id,
+        client_secret: Rails.application.config.client_secret,
         scope: 'https://www.googleapis.com/auth/calendar.events.readonly, https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/userinfo.profile'
       )
 
