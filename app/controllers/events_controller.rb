@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
     if client.authorization.access_token
       if client.authorization.expired?
+        resource.destroy
         sign_out_all_scopes
         redirect_to new_user_session_path, alert: "Your session expired. You need to Sign In with Google."
       else
