@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Calendii is a simple app having following functionalities:
 
-Things you may want to cover:
+        1. Signing Up and Logging In with Authentication
+        2. Accessing Calender Events of Users
+        3. Updating Existing Profiles
+        4. Deleting Existing Profiles
 
-* Ruby version
+First of all, you need to set up your Google OAuth Credentials, gained through developers console.
 
-* System dependencies
+Here's how you can set environment variables in a Rails application:
 
-* Configuration
+1. Open a terminal or command prompt.
 
-* Database creation
+2. Navigate to your Rails application's root directory.
 
-* Database initialization
+3. Run the following command to set the environment variables:
 
-* How to run the test suite
+export CLIENT_ID=<your_client_id>
 
-* Services (job queues, cache servers, search engines, etc.)
+export CLIENT_SECRET=<your_client_secret>
 
-* Deployment instructions
+Replace <your_client_id> and <your_client_secret> with the actual values for your client ID and client secret.
 
-* ...
+Note: The syntax for setting environment variables can vary depending on your operating system. The above command works for Unix-based systems like macOS and Linux. If you're using Windows, the command might be different. Consult the documentation for your specific operating system.
