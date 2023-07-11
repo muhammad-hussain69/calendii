@@ -25,8 +25,8 @@ pre {
 
 .event-card {
     background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     text-align: center;
 }
@@ -45,11 +45,20 @@ strong {
     font-weight: bold;
 }
 
+.card {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #e3f2fd;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: #e3f2fd;
     align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .flex-container >div {
